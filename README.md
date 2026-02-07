@@ -102,7 +102,7 @@ El proyecto demuestra que los **algoritmos de clustering, especialmente DBSCAN, 
 
 ### 🔧 Posibles mejoras
 
-- **Ampliar y enriquecer el dataset**: incluir velocidad media, tipo de neumático, número de correcciones de volante y otros factores.  
+- **Ampliar y enriquecer el dataset:** incluir velocidad media, tipo de neumático, número de correcciones de volante y otros factores.  
 - **Validación en distintos escenarios:** evaluar el modelo con datos de otras sesiones o circuitos para mejorar la generalización.  
 - **Comparación con métodos híbridos o ensembles:** combinar DBSCAN con otras técnicas para captar patrones más complejos.
 
@@ -115,10 +115,12 @@ import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
 import seaborn as sns
-from sklearn.preprocessing import StandardScaler
-from sklearn.cluster import KMeans, DBSCAN, AgglomerativeClustering
+from sklearn.preprocessing import StandardScaler, MinMaxScaler, RobustScaler
+from sklearn.cluster import KMeans, DBSCAN
+from sklearn.neighbors import NearestNeighbors
 from sklearn.mixture import GaussianMixture
 from sklearn.metrics import silhouette_score, davies_bouldin_score
+import scipy.cluster.hierarchy as sch
 ```
 
 ---
